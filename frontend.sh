@@ -11,7 +11,6 @@ rm -rf /usr/share/nginx/html/* &>>${log_file}
 curl -o /tmp/frontend.zip https://roboshop-artifacts.s3.amazonaws.com/frontend.zip  &>>${log_file}
 cd /usr/share/nginx/html 
 unzip /tmp/frontend.zip &>>${log_file}
-cd -
 echo -e "\e[35mCopying the config files \e[0m"
 cp ${code_dir}/configs/roboshop.conf /etc/nginx/default.d/roboshop.conf &>>${log_file}
 
