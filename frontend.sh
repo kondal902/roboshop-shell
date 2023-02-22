@@ -1,4 +1,4 @@
-code_dir$(pwd)
+code_dir=$(pwd)
 log_file=/tmp/roboshop.log
 rm -f $(log_file}
 
@@ -13,7 +13,7 @@ cd /usr/share/nginx/html
 unzip /tmp/frontend.zip &>>$(log_file}
 cd -
 echo -e "\e[35mCopying the config files \e[0m"
-cp configs/roboshop.conf /etc/nginx/default.d/roboshop.conf &>>$(log_file}
+cp ${code_dir}/configs/roboshop.conf /etc/nginx/default.d/roboshop.conf &>>$(log_file}
 
 echo -e "\e[35mEnabling the nginx \e[0m"
 systemctl enable nginx  &>>$(log_file}
